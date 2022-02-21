@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}" xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+<div class="corpo" layout:fragment="corpo">
+	<div id="loader-box" class="">
+		<div id="loader-form" class=""></div>
+	</div>
+	<div id="tabela-categoria">
+		<div id="alert" class=""></div>
+
+		<table id="table-categoria-server" class="display nowrap ui celled table" style="width: 100%">
+			<thead class="thead-dark">
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">Nome</th>
+				<th scope="col">Promocões Cadastradas</th>
+			</tr>
+			</thead>
+		</table>
+	</div>
+
+
+	<div th:replace="/categories/categoria-datatables-modal :: modal-form-categoria"></div>
+	<div th:replace="/categories/categoria-datatables-modal-del :: modal-delete-categoria"></div>
+
+</div>
+<script th:src="@{/js/categoria-datatables.js}" th:fragment="js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<html>
+<div class="card-group col-lg-3 col-md-6 pb-4 rounded" th:each="promo : ${promocoes}">
+    <div th:id="${promo.id}" class="card">
+        <div class="block-img">
+            <img class="card-img-top" th:src="${promo.linkImagem}" alt="Card image cap">
+        </div>
+        <div class="card-body">
+            <div>
+                <p style="background: #e9ecef" class="badge mb-2 text-muted card-subtitle" th:text="${promo.categoria.nome}"/>
+            </div>
+            <div>
+                <p class="card-subtitle mb-2 text-muted" th:text="${#strings.abbreviate(promo.titulo, 55)}"/>
+            </div>
+            <div>
+                <h5 class="card-title" th:text="${promo.site}"></h5>
+            </div>
+            <div class="mb-2">
+                <p class="card-text" th:text="${#strings.abbreviate(promo.descricao, 30)}"></p>
+            </div>
+            <div>
+                <h6 class="badge bg-primary" th:text="|R$ ${{promo.preco}}|"></h6>
+            </div>
+            <div class="btn-group">
+                <button th:id="${'likes-count-' + promo.id}" type="button" class="btn btn-sm btn-outline-secondary" th:text="${promo.likes}"></button>
+                <button th:id="${'likes-btn-' + promo.id}" type="button" class="btn btn-sm btn-outline-secondary">
+                    <i class="far fa-thumbs-up"></i>
+                </button>
+                <a th:href="${promo.linkPromocao}" class="btn btn-sm btn-outline-secondary" role="button" aria-pressed="true" target="new">Ver Oferta</a>
+            </div>
+        </div>
+        <div class="card-footer">
+            <small class="text-muted" th:text="${#temporals.format(promo.dtCadastro, 'dd/MM/yyyy')}"></small>
+        </div>
+    </div>
+</div>
+</html>

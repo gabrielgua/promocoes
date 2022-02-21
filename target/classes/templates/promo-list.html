@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+
+	<div class="corpo" layout:fragment="corpo">
+		<main role="main">
+			<section class="container-fluid rounded text-center p-5 mb-3" style="background: #e9ecef">
+				<div class="container">
+					<h1>Promo Spring - Ofertas mais recentes</h1>
+					<p class="lead text-muted">Aproveite a lista de ofertas e pague	menos por seus desejos.</p>
+
+					<form id="form-autocomplete">
+						<div class="row">
+							<div class="input-group col-md-12">
+								<input id="autocomplete-input" name="site" type="text" class="form-control" placeholder="Ex.: udemy">
+								<button id="autocomplete-submit" type="button" class="btn btn-primary">Confirmar</button>
+							</div>
+						</div>
+					</form>
+
+				</div>
+			</section>
+
+			<div class="album p-3 py-4 rounded mb-5" style="background: #e9ecef">
+				<div class="container">
+
+					<div class="form-group">
+						<button id="btn-alert" class="btn btn-warning btn-lg mb-3 w-100 hidden"	style="display: none;"></button>
+					</div>
+					<div class="row principal" th:insert="promo-card"></div>
+					<div id="loading">
+						<div id="loader-img" class="mx-auto loader"></div>
+						<a id="fim-btn" type='button' href='#' class='btn btn-info w-100 mb-3'>Fim! Voltar ao topo</a>
+						<div class="container d-flex text-muted justify-content-center">@<a href="https://github.com/gabrielgua" class="text-muted">github.com/gabrielgua</a></div>
+					</div>
+				</div>
+			</div>
+		</main>
+	</div>
+
+	<script th:src="@{/js/promo-list.js}" th:fragment="js"></script>
+</body>
+</html>

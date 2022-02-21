@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+
+<div class="corpo" layout:fragment="corpo">
+
+    <div id="loader-box" class="">
+        <div id="loader-form" class=""></div>
+    </div>
+
+    <form id="form-add-categoria" action="#">
+
+        <div id="alert" class=""></div>
+
+        <div class="mb-3">
+            <label class="form-label" for="nome">Nome</label>
+            <input type="text" class="form-control" id="nome" name="nome" aria-describedby="nomeCategoria"
+                   placeholder="Nome da Categoria"/>
+            <div id="error-nome" class=""></div>
+        </div>
+        <div class="col-sm-12">
+            <button id="btn-cadastro" class="btn btn-primary btn-lg btn-block w-100">Cadastrar</button>
+            <span id="loader-img-btn"></span>
+        </div>
+
+    </form>
+
+</div>
+
+<script th:src="@{/js/categoria-add.js}" th:fragment="js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout}">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+
+	<!-- Modal -->
+	<div class="modal fade" id="modal-delete-categoria" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalCenterTitle" aria-hidden="true" th:fragment="modal-delete-categoria">
+		<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLongTitle">Excluir Promoção</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<p>Deseja realmente remover esta Categoria? </p>
+					<div id="error-del-cat" class=""></div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"	data-bs-dismiss="modal">Cancelar</button>
+					<button id="btn-del-modal-categoria" class="btn btn-danger">Confirmar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>
